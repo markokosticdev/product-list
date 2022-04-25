@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Apollo } from 'apollo-angular';
-import { CategoryListQuery, CategoryQuery } from '@product-list/types-lib';
-import { Observable } from 'rxjs';
-import { ApolloQueryResult } from '@apollo/client/core';
-import { GET_CATEGORIES, GET_CATEGORY } from '../../services-lib.graphql';
+import {interval, map, Observable, take} from 'rxjs';
+import {ApolloQueryResult} from "@apollo/client/core";
+import {CategoryListQuery, CategoryQuery} from "@product-list/types-lib";
+import {GET_CATEGORIES, GET_CATEGORY} from "../../services-lib.graphql";
 
 @Injectable({ providedIn: 'root' })
 export class CategoryService {

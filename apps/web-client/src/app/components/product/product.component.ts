@@ -3,7 +3,7 @@ import {Observable, zip} from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ApolloQueryResult } from '@apollo/client/core';
 import {CategoryQuery, ProductQuery} from '@product-list/types-lib';
-import {CategoryService, ProductService} from '@product-list/services-lib';
+import {CategoryService, CountdownService, ProductService} from '@product-list/services-lib';
 
 @Component({
   selector: 'product',

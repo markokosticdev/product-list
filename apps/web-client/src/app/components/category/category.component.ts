@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CategoryQuery } from '@product-list/types-lib';
-import { CategoryService } from '@product-list/services-lib';
+import {CategoryService} from '@product-list/services-lib';
 import { ApolloQueryResult } from '@apollo/client/core';
 
 @Component({
