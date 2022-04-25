@@ -21,17 +21,19 @@ export class ProductComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    const categoryId = this.route.snapshot.paramMap.get('category');
-    const productId = this.route.snapshot.paramMap.get('product');
+    this.route.params.subscribe(params => {
+      const categoryId = params['category'];
+      const productId = params['product'];
 
-    if (categoryId && productId) {
-      this.data$ = zip(
-        this.categoryService.getCategory(categoryId),
-        this.productService.getProduct(productId)
-      );
-    } else {
-      this.router.navigate(['/']);
-    }
+      if (categoryId && productId) {
+        this.data$ = zip(
+          this.categoryService.getCategory(categoryId),
+          this.productService.getProduct(productId)
+        );
+      } else {
+        this.router.navigate(['/']);
+      }
+    })
   }
 }
 // ### Individual Product view
