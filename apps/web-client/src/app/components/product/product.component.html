@@ -1,0 +1,40 @@
+<div class="row" *ngIf="data$">
+  <div class="card" *ngIf="data$ | async as response">
+    <div class="card-header" *ngIf="response[0].data && response[1].data">
+      <h4 class="mt-2">Product Page</h4>
+    </div>
+
+    <div class="card-body">
+      <div class="row my-n3">
+        <ng-template [ngIf]="response[0].data && response[1].data">
+          <div class="col-12">
+            <product-header
+              [product]="response[1].data.getProduct"
+            ></product-header>
+          </div>
+          <div class="col-12 mt-3">
+            <product-body [product]="response[1].data.getProduct"></product-body>
+          </div>
+          <div class="col-12 mt-3">
+            <product-related [category]="response[0].data.getCategory" [current]="response[1].data.getProduct"></product-related>
+          </div>
+        </ng-template>
+        <ng-template [ngIf]="!response[1].loading && !response[1].data">
+          <div class="col">
+            <h4 class="text-center">Not Found</h4>
+          </div>
+        </ng-template>
+        <ng-template [ngIf]="response[1].error">
+          <div class="col">
+            <h4 class="text-center">Error</h4>
+          </div>
+        </ng-template>
+        <ng-template [ngIf]="response[1].loading && !response[1].error">
+          <div class="col">
+            <h4 class="text-center">Loading...</h4>
+          </div>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</div>

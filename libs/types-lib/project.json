@@ -1,0 +1,14 @@
+{
+  "root": "libs/types-lib",
+  "sourceRoot": "libs/types-lib/src",
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/types-lib/**/*.ts"]
+      }
+    }
+  },
+  "tags": []
+}

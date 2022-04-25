@@ -1,0 +1,15 @@
+<div class="card">
+  <div class="card-body">
+    <div class="row d-flex justify-content-center">
+      <img
+        class="col-12 my-n5 img-fluid"
+        [src]="product.image.sourceUrl"
+        [alt]="product.image.title"
+      />
+      <h4 class="col-12 text-center mt-3">
+        Description: {{ product.description }}
+      </h4>
+      <h4 class="col-12 text-center">Price: {{ product.price }}</h4>
+    </div>
+  </div>
+</div>
