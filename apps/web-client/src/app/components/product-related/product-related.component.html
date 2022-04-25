@@ -1,7 +1,8 @@
 <div class="row mt-2">
-  <div class="col-4" *ngFor="let product of related">
-    <product-tile [categoryId]="category._id" [product]="product"></product-tile>
+  <div *ngFor="let product of related" class="col-4">
+    <product-tile
+      [categoryId]="category._id"
+      [product]="product"
+    ></product-tile>
   </div>
 </div>
-
-

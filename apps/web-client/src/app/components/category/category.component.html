@@ -1,8 +1,8 @@
-<div class="row mt-3" *ngIf="data$">
+<div *ngIf="data$" class="row mt-3">
   <div class="col">
     <div class="card">
       <ng-container *ngIf="data$ | async as response">
-        <div class="card-header bg-white" *ngIf="response.data">
+        <div *ngIf="response.data" class="card-header bg-white">
           <h4 class="mt-2">Category Page</h4>
         </div>
 
@@ -10,10 +10,13 @@
           <div class="row my-n3">
             <ng-template [ngIf]="response.data">
               <div
-                class="col-12 col-sm-6 col-md-4 col-lg-3 p-2"
                 *ngFor="let product of response.data.getCategory.products"
+                class="col-12 col-sm-6 col-md-4 col-lg-3 p-2"
               >
-                <product-tile [categoryId]="response.data.getCategory._id" [product]="product"></product-tile>
+                <product-tile
+                  [categoryId]="response.data.getCategory._id"
+                  [product]="product"
+                ></product-tile>
               </div>
             </ng-template>
             <ng-template [ngIf]="!response.loading && !response.data">

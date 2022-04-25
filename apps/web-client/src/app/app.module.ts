@@ -6,7 +6,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { WithStatusPipe } from './pipes/with-status/with-status.pipe';
 import { AppRouterModule } from './router/app-router.module';
 import { GraphQLModule } from './graphql/graphql.module';
 import { HttpClientModule } from '@angular/common/http';
@@ -17,7 +16,7 @@ import { CategoryTileComponent } from './components/category-tile/category-tile.
 import { ProductTileComponent } from './components/product-tile/product-tile.component';
 import { ProductHeaderComponent } from './components/product-header/product-header.component';
 import { ProductBodyComponent } from './components/product-body/product-body.component';
-import {ProductRelatedComponent} from "./components/product-related/product-related.component";
+import { ProductRelatedComponent } from './components/product-related/product-related.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +25,6 @@ import {ProductRelatedComponent} from "./components/product-related/product-rela
     CategoryComponent,
     ProductComponent,
     ProductTileComponent,
-    WithStatusPipe,
     CategoryTileComponent,
     ProductTileComponent,
     ProductHeaderComponent,

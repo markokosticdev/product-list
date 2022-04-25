@@ -1,14 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
-@import "./assets/styles/variables";
+@import './assets/styles/variables';
 @import '~bootstrap';
 
-body{
+body {
   color: var(--main-fg-color);
   background: var(--main-bg-color);
 
-  a{
+  a {
     color: var(--main-fg-color);
-    &:active, &:hover, &:focus{
+
+    &:active,
+    &:hover,
+    &:focus {
       color: var(--main-fg-color);
     }
   }

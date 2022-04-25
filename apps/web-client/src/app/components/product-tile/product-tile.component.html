@@ -3,9 +3,9 @@
     <a [routerLink]="['/categories', categoryId, 'products', product._id]">
       <div class="row">
         <img
-          class="col-12 my-n5 img-fluid text-center"
-          [src]="product.image.sourceUrl"
           [alt]="product.image.title"
+          [src]="product.image.sourceUrl"
+          class="col-12 my-n5 img-fluid text-center"
         />
         <h4 class="col-12 text-center">Product: {{ product.name }}</h4>
       </div>

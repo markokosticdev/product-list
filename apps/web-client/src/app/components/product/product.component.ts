@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {Observable, zip} from 'rxjs';
+import { Observable, zip } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ApolloQueryResult } from '@apollo/client/core';
-import {CategoryQuery, ProductQuery} from '@product-list/types-lib';
-import {CategoryService, CountdownService, ProductService} from '@product-list/services-lib';
+import { CategoryQuery, ProductQuery } from '@product-list/types-lib';
+import { CategoryService, ProductService } from '@product-list/services-lib';
 
 @Component({
   selector: 'product',
@@ -11,7 +11,11 @@ import {CategoryService, CountdownService, ProductService} from '@product-list/s
   styleUrls: ['./product.component.scss'],
 })
 export class ProductComponent implements OnInit {
-  data$: Observable<[ApolloQueryResult<CategoryQuery>, ApolloQueryResult<ProductQuery>]> | undefined;
+  data$:
+    | Observable<
+        [ApolloQueryResult<CategoryQuery>, ApolloQueryResult<ProductQuery>]
+      >
+    | undefined;
 
   constructor(
     private router: Router,
@@ -21,7 +25,7 @@ export class ProductComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.route.params.subscribe(params => {
+    this.route.params.subscribe((params) => {
       const categoryId = params['category'];
       const productId = params['product'];
 
@@ -33,9 +37,10 @@ export class ProductComponent implements OnInit {
       } else {
         this.router.navigate(['/']);
       }
-    })
+    });
   }
 }
+
 // ### Individual Product view
 // - Information about the product
 // - Countdown (using RxJS) to midnight to let the user know if they order it today, it will be delivered tomorrow
